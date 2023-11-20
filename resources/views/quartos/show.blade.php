@@ -6,7 +6,7 @@
  <div class="col-md-10 offset-md-1">
     <div class="row">
         <div id="image-container" class="col-md-6">
-            <img src="img/quartos/{{ $quarto->image }}" alt="imagem-quarto" class="img-fluid">
+            <img src="/img/quartos/{{ $quarto->image }}" alt="imagem-quarto" class="img-fluid">
         </div>
         <div id="info-container" class="col-md-6">
             <h1>{{$quarto->numero}}</h1>

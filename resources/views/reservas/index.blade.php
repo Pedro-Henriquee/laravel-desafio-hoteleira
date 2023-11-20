@@ -17,11 +17,11 @@
                 <th scope="col">Ações</th>
             </tr>
         </thead>
-        <tbody>
-            @foreach($reservas as $reserva)
+        @foreach($reservas as $reserva)
+            <tbody>
                 <td scope="row">{{ $loop->index + 1 }}</td>
                 <td><a href="/quartos/{{ $reserva->quarto_id }}">{{ $reserva->quarto->numero }}</a></td>
-                <td><a href="/quartos/{{ $reserva->quarto_id }}">{{ $reserva->data_checkin }}</a></td>
+                <td>{{ $reserva->data_checkin }}</td>
                 <td>
                     <form action="/reservas/delete/{{ $reserva->id }}" method="post">
                         @csrf
@@ -29,8 +29,8 @@
                         <button type="submit" class="btn btn-danger delete-btn"><ion-icon name="trash-outline"></ion-icon>Cancelar reserva</button>
                     </form>
                 </td>
-            @endforeach
-        </tbody>
+            </tbody>
+        @endforeach
     </table>
     @else
         <p>Você ainda não tem reservas, <a href="/" style="text-decoration:none;">Reservar quarto</a></p>
