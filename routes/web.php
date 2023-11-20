@@ -22,4 +22,4 @@ Route::get('/reservas', [ReservaController::Class, 'index'])->middleware('auth')
 
 /* Reservar e Cancelar Reserva */
 Route::post('/reservas/store/{id}', [ReservaController::Class, 'store'])->middleware('auth');
-Route::get('reservas/delete/{id}', [ReservaController::Class, 'destroy'])->middleware('auth');
+Route::delete('reservas/delete/{id}', [ReservaController::Class, 'destroy'])->middleware('auth');

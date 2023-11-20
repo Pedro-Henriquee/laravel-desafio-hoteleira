@@ -36,9 +36,14 @@ class ReservaController extends Controller
     }
 
     public function destroy($id) {
+
         $user = auth()->user();
 
-        Reserva::findOrFail($id)->update(['dt_checkout' => date('Y-m-d')])->delete();
+        $reserva = Reserva::findOrFail($id);
+
+        if($reserva->update(['data_checkout' => date('Y-m-d')])) {
+            Reserva::findOrFail($id)->delete();
+        };
 
         return redirect('/reservas')->with('msg', 'Sua reserva foi cancelada com sucesso!');
     }

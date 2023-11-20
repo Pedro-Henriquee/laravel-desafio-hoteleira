@@ -9,6 +9,11 @@ class Reserva extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'data_checkout',
+    ];
+
+
     public function cliente() {
         return $this->belongsTo("App\Models\User");
     }
