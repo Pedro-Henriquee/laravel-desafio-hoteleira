@@ -11,7 +11,6 @@
         <div id="info-container" class="col-md-6">
             <h1>{{$quarto->numero}}</h1>
             <p class="quarto-quantity"><ion-icon name="people-outline"></ion-icon>{{$quarto->capacidade}}</p>
-            <p class="quarto-price"><ion-icon name="information-circle-outline">{{$quarto->preco_diaria}}</ion-icon></p>
             <p class="quarto-date"><ion-icon name="bed-outline"></ion-icon>{{ date('d/m/Y', $quarto->created_at->timestamp) }}</p>
             @if(!$hasUserJoined)
                 <form action="/reservas/store/{{$quarto->id}}" method="post">
